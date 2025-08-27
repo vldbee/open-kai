@@ -1,0 +1,460 @@
+/* Загальні стилі */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #57b1bc; /* Бірюзовий фон */
+    background-image: url('image/open\ kai.png'); /* Шлях до картинки */
+    background-repeat: repeat;
+    background-size: 200px; /* Розмір патерну, уточни розмір твого open-kai.png */
+    background-position: 0 0; /* Шаховий порядок */
+    background-attachment: fixed; /* Фон фіксується при прокрутці */
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+}
+
+/* Затемнення фону + напівпрозорий патерн */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Легке затемнення */
+    z-index: -2;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-repeat: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    opacity: 0.1; /* Дуже низька прозорість для меншого кринжу */
+    z-index: -1;
+}
+
+/* Навігація */
+header {
+    background: linear-gradient(135deg, #57b1bc, #f04625);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, border 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #f04625;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+/* Герой секція */
+.hero {
+    background: url('img/hero-bg.jpg') no-repeat center/cover;
+    padding: 5rem 2rem;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    color: white; /* Білий текст */
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #f04625;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.event-info {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.event-info a {
+    color: #f04625;
+    text-decoration: none;
+}
+
+/* Секція про подію */
+.about {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.about h2 {
+    color: white; /* Білий текст */
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    background-color: #57b1bc;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.about a {
+    color: #57b1bc;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Секція тизер */
+.teaser {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.teaser h2 {
+    color: white; /* Білий текст */
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    background-color: #57b1bc;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.teaser-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.teaser-card:hover {
+    transform: translateY(-5px);
+}
+
+.teaser-card h3 {
+    color: white; /* Білий текст */
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background-color: #57b1bc;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.teaser-card p {
+    color: #333;
+    font-size: 1rem;
+}
+
+.teaser-link {
+    display: inline-block;
+    color: #f04625;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 1rem;
+    transition: color 0.3s;
+}
+
+.teaser-link:hover {
+    color: #57b1bc;
+}
+
+/* Спікери */
+.speakers {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.speakers h2 {
+    color: white; /* Білий текст */
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    background-color: #57b1bc;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.speaker-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.speaker-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.speaker-card:hover {
+    transform: translateY(-5px);
+}
+
+.speaker-card img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 1.5rem;
+}
+
+.speaker-info h3 {
+    color: white; /* Білий текст */
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    background-color: #57b1bc;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.speaker-info .topic {
+    color: #57b1bc;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.speaker-info .quote {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #333;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-left: 3px solid #f04625;
+    border-radius: 5px;
+}
+
+/* Партнери */
+.partners {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.partners h2 {
+    color: white; /* Білий текст */
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    background-color: #57b1bc;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.partner-grid img {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.partner-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Таймлайн */
+.timeline {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.timeline h2 {
+    color: white; /* Білий текст */
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    background-color: #57b1bc;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.timeline-container {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.2rem;
+    top: 1rem;
+    width: 10px;
+    height: 10px;
+    background-color: #f04625;
+    border-radius: 50%;
+}
+
+.timeline-item .time {
+    font-weight: 700;
+    color: #57b1bc;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Футер */
+footer {
+    background: linear-gradient(135deg, #57b1bc, #f04625);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #57b1bc;
+}
+
+/* Анімації */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .speaker-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .speaker-card img {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .teaser-grid {
+        grid-template-columns: 1fr;
+    }
+}
