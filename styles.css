@@ -8,41 +8,14 @@
 
 body {
     background-color: #57b1bc; /* Бірюзовий фон */
-    background-image: url('image/open\ kai.png'); /* Шлях до картинки */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="100"><text x="10" y="60" font-family="Montserrat, sans-serif" font-size="40" font-weight="900" fill="rgba(255, 255, 255, 0.1)">OPEN KAI</text></svg>'); /* Фраза OPEN KAI у шаховому порядку */
     background-repeat: repeat;
-    background-size: 200px; /* Розмір патерну, уточни розмір твого open-kai.png */
+    background-size: 300px 100px; /* Розмір патерну */
     background-position: 0 0; /* Шаховий порядок */
     background-attachment: fixed; /* Фон фіксується при прокрутці */
     color: #333;
     line-height: 1.6;
     position: relative;
-}
-
-/* Затемнення фону + напівпрозорий патерн */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2); /* Легке затемнення */
-    z-index: -2;
-}
-
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: inherit;
-    background-repeat: inherit;
-    background-size: inherit;
-    background-position: inherit;
-    opacity: 0.1; /* Дуже низька прозорість для меншого кринжу */
-    z-index: -1;
 }
 
 /* Навігація */
@@ -83,12 +56,13 @@ nav ul li a {
     font-size: 1.1rem;
     font-weight: 700;
     padding: 0.5rem 1rem;
-    transition: color 0.3s, border 0.3s;
+    transition: color 0.3s, background 0.3s, border 0.3s;
 }
 
 nav ul li a:hover, nav ul li a.active {
-    color: #f04625;
-    border: 2px solid white;
+    color: #f04625; /* Помаранчевий текст */
+    background: white; /* Біла заливка */
+    border: 2px solid white; /* Біла обводка */
     border-radius: 5px;
 }
 
@@ -145,7 +119,7 @@ nav ul li a:hover, nav ul li a.active {
 /* Секція про подію */
 .about {
     max-width: 1200px;
-    margin: 3rem auto;
+    margin: 1.5rem auto; /* Зменшено відступ від герой-секції */
     padding: 2rem;
     background-color: #ffffff;
     border-radius: 10px;
@@ -284,9 +258,12 @@ nav ul li a:hover, nav ul li a.active {
     font-size: 1.6rem;
     font-weight: 900;
     margin-bottom: 0.5rem;
-    background-color: #57b1bc;
+    background-color: #57b1bc; /* Бірюзовий фон на всю комірку */
     padding: 0.5rem;
     border-radius: 5px;
+    width: 100%; /* На всю ширину .speaker-info */
+    text-align: center; /* Вирівнювання по центру */
+    box-sizing: border-box; /* Щоб padding не вилазив */
 }
 
 .speaker-info .topic {
