@@ -7,12 +7,12 @@
 }
 
 body {
-    background-color: #57b1bc; /* Бірюзовий фон */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="100"><text x="10" y="60" font-family="Montserrat, sans-serif" font-size="40" font-weight="900" fill="rgba(255, 255, 255, 0.1)">OPEN KAI</text></svg>'); /* Фраза OPEN KAI у шаховому порядку */
+    background-color: #57b1bc;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="100"><text x="10" y="60" font-family="Montserrat, sans-serif" font-size="60" font-weight="900" fill="rgba(255, 255, 255, 0.1)">OPEN KAI</text></svg>');
     background-repeat: repeat;
-    background-size: 300px 100px; /* Розмір патерну */
-    background-position: 0 0; /* Шаховий порядок */
-    background-attachment: fixed; /* Фон фіксується при прокрутці */
+    background-size: 300px 100px;
+    background-position: 0 0;
+    background-attachment: fixed;
     color: #333;
     line-height: 1.6;
     position: relative;
@@ -20,7 +20,7 @@ body {
 
 /* Навігація */
 header {
-    background: #f04625; /* Чистий помаранчевий фон */
+    background: #f04625;
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -33,7 +33,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 .logo {
@@ -44,46 +44,62 @@ nav {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     padding: 0.5rem 1rem;
     transition: color 0.3s, background 0.3s, border 0.3s;
 }
 
-nav ul li a:hover, nav ul li a.active {
-    color: #57b1bc; /* Бірюзовий текст для контрасту */
-    background: white; /* Біла заливка */
-    border: 2px solid white; /* Біла обводка */
+nav ul li a:hover, nav ul li a.active, nav ul li a[aria-current="page"] {
+    color: #57b1bc;
+    background: white;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+nav ul li a:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+    background: white;
+    color: #57b1bc;
     border-radius: 5px;
 }
 
 /* Герой секція */
 .hero {
     background: url('img/hero-bg.jpg') no-repeat center/cover;
-    padding: 5rem 2rem;
+    padding: 4rem 1rem;
     text-align: center;
     color: white;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 900;
     margin-bottom: 1.5rem;
-    color: white; /* Білий текст */
 }
 
 .hero p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto 2rem;
 }
@@ -112,33 +128,35 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .event-info a {
-    color: white; /* Змінено на білий для кращої читабельності */
+    color: #80c7d0;
     text-decoration: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Секція про подію */
 .about {
     max-width: 1200px;
-    margin: 1.5rem auto; /* Зменшено відступ від герой-секції */
-    padding: 2rem;
+    margin: 1.5rem auto;
+    padding: 1.5rem;
     background-color: #ffffff;
+    border: 2px solid #f04625;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .about h2 {
-    color: white; /* Білий текст */
-    font-size: 2.2rem;
+    color: white;
+    font-size: 2rem;
     font-weight: 900;
     margin-bottom: 1rem;
-    background-color: #57b1bc;
+    background-color: #3a8a94;
     padding: 0.5rem;
     border-radius: 5px;
 }
 
 .about a {
-    color: white; /* Змінено на білий для кращої читабельності */
+    color: #80c7d0;
     text-decoration: none;
     font-weight: 700;
 }
@@ -146,17 +164,17 @@ nav ul li a:hover, nav ul li a.active {
 /* Секція тизер */
 .teaser {
     max-width: 1200px;
-    margin: 3rem auto;
-    padding: 2rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
     text-align: center;
 }
 
 .teaser h2 {
-    color: white; /* Білий текст */
-    font-size: 2.2rem;
+    color: white;
+    font-size: 2rem;
     font-weight: 900;
-    margin-bottom: 2rem;
-    background-color: #57b1bc;
+    margin-bottom: 1.5rem;
+    background-color: #3a8a94;
     padding: 0.5rem;
     border-radius: 5px;
 }
@@ -164,14 +182,15 @@ nav ul li a:hover, nav ul li a.active {
 .teaser-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .teaser-card {
     background-color: #ffffff;
     padding: 1.5rem;
+    border: 2px solid #f04625;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 
@@ -180,11 +199,11 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .teaser-card h3 {
-    color: white; /* Білий текст */
-    font-size: 1.6rem;
+    color: white;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    background-color: #57b1bc;
+    background-color: #3a8a94;
     padding: 0.5rem;
     border-radius: 5px;
 }
@@ -196,7 +215,7 @@ nav ul li a:hover, nav ul li a.active {
 
 .teaser-link {
     display: inline-block;
-    color: white; /* Змінено на білий для кращої читабельності */
+    color: #80c7d0;
     text-decoration: none;
     font-weight: 700;
     margin-top: 1rem;
@@ -204,31 +223,31 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .teaser-link:hover {
-    color: #57b1bc;
+    color: #f04625;
 }
 
 /* Спікери */
 .speakers {
     max-width: 1200px;
-    margin: 3rem auto;
-    padding: 2rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
     text-align: center;
 }
 
 .speakers h2 {
-    color: white; /* Білий текст */
-    font-size: 2.2rem;
+    color: white;
+    font-size: 2rem;
     font-weight: 900;
-    margin-bottom: 2rem;
-    background-color: #57b1bc;
+    margin-bottom: 1.5rem;
+    background-color: #3a8a94;
     padding: 0.5rem;
     border-radius: 5px;
 }
 
 .speaker-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Фіксована мінімальна ширина */
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
 }
 
 .speaker-card {
@@ -236,10 +255,11 @@ nav ul li a:hover, nav ul li a.active {
     align-items: center;
     background-color: #ffffff;
     padding: 1.5rem;
+    border: 2px solid #f04625;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
-    flex-direction: column; /* Змінено на колонку для кращого вирівнювання */
+    flex-direction: column;
     text-align: center;
 }
 
@@ -252,19 +272,19 @@ nav ul li a:hover, nav ul li a.active {
     height: 180px;
     object-fit: cover;
     border-radius: 10px;
-    margin-bottom: 1rem; /* Відступ під зображенням */
+    margin-bottom: 1rem;
 }
 
 .speaker-info h3 {
-    color: white; /* Білий текст */
-    font-size: 1.6rem;
+    color: white;
+    font-size: 1.5rem;
     font-weight: 900;
     margin-bottom: 0.5rem;
-    background-color: #57b1bc; /* Бірюзовий фон на всю ширину картки */
+    background-color: #3a8a94;
     padding: 0.5rem;
     border-radius: 5px;
-    width: 100%; /* Ширина на всю картку */
-    box-sizing: border-box; /* Щоб padding не вилазив */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .speaker-info .topic {
@@ -287,17 +307,17 @@ nav ul li a:hover, nav ul li a.active {
 /* Партнери */
 .partners {
     max-width: 1200px;
-    margin: 3rem auto;
-    padding: 2rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
     text-align: center;
 }
 
 .partners h2 {
-    color: white; /* Білий текст */
-    font-size: 2.2rem;
+    color: white;
+    font-size: 2rem;
     font-weight: 900;
-    margin-bottom: 2rem;
-    background-color: #57b1bc;
+    margin-bottom: 1.5rem;
+    background-color: #3a8a94;
     padding: 0.5rem;
     border-radius: 5px;
 }
@@ -305,12 +325,17 @@ nav ul li a:hover, nav ul li a.active {
 .partner-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .partner-card {
     position: relative;
     text-align: center;
+    background-color: #ffffff;
+    padding: 1rem;
+    border: 2px solid #f04625;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .partner-card img {
@@ -327,12 +352,12 @@ nav ul li a:hover, nav ul li a.active {
 .partner-name {
     display: block;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    background-color: #57b1bc;
+    background-color: #3a8a94;
     padding: 0.5rem;
     border-radius: 5px;
-    width: 100%; /* Ширина на всю картку */
+    width: 100%;
     box-sizing: border-box;
     margin-top: 0.5rem;
 }
@@ -340,17 +365,17 @@ nav ul li a:hover, nav ul li a.active {
 /* Таймлайн */
 .timeline {
     max-width: 1200px;
-    margin: 3rem auto;
-    padding: 2rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
     text-align: center;
 }
 
 .timeline h2 {
-    color: white; /* Білий текст */
-    font-size: 2.2rem;
+    color: white;
+    font-size: 2rem;
     font-weight: 900;
-    margin-bottom: 2rem;
-    background-color: #57b1bc;
+    margin-bottom: 1.5rem;
+    background-color: #3a8a94;
     padding: 0.5rem;
     border-radius: 5px;
 }
@@ -366,7 +391,9 @@ nav ul li a:hover, nav ul li a.active {
     text-align: left;
     background-color: #ffffff;
     padding: 1rem;
+    border: 2px solid #f04625;
     border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 
@@ -395,7 +422,7 @@ nav ul li a:hover, nav ul li a.active {
 
 /* Футер */
 footer {
-    background: #f04625; /* Чистий помаранчевий фон */
+    background: #f04625;
     color: white;
     text-align: center;
     padding: 1rem;
@@ -404,8 +431,9 @@ footer {
 }
 
 footer a {
-    color: white;
+    color: #80c7d0;
     text-decoration: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     transition: color 0.3s;
 }
 
@@ -428,16 +456,36 @@ footer a:hover {
 /* Адаптивність */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .hero p {
         font-size: 1.1rem;
     }
 
+    nav {
+        position: relative;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
     nav ul {
+        display: none;
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.5rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f04625;
+        padding: 1rem;
+        z-index: 100;
+    }
+
+    nav ul.active {
+        display: flex;
     }
 
     .speaker-card {
@@ -450,15 +498,12 @@ footer a:hover {
         margin-bottom: 1rem;
     }
 
-    .teaser-grid {
+    .teaser-grid, .speaker-grid, .partner-grid {
         grid-template-columns: 1fr;
     }
 
-    .speaker-grid {
-        grid-template-columns: 1fr; /* Одна колонка на малих екранах */
+    .about, .teaser, .speakers, .partners, .timeline {
+        padding: 1rem;
+        margin: 1rem;
     }
-
-    .partner-card {
-        width: 100%;
-    }
-}
+} 
