@@ -17,7 +17,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.speaker-card, .timeline-item, .about, .teaser-card').forEach(item => {
+document.querySelectorAll('.speaker-card, .timeline-item, .about, .teaser-card, .partner-card').forEach(item => {
     item.classList.add('fade-in');
     observer.observe(item);
 });

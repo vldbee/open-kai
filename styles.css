@@ -20,7 +20,7 @@ body {
 
 /* Навігація */
 header {
-    background: linear-gradient(135deg, #57b1bc, #f04625);
+    background: #f04625; /* Чистий помаранчевий фон */
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -60,7 +60,7 @@ nav ul li a {
 }
 
 nav ul li a:hover, nav ul li a.active {
-    color: #f04625; /* Помаранчевий текст */
+    color: #57b1bc; /* Бірюзовий текст для контрасту */
     background: white; /* Біла заливка */
     border: 2px solid white; /* Біла обводка */
     border-radius: 5px;
@@ -112,7 +112,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .event-info a {
-    color: #f04625;
+    color: white; /* Змінено на білий для кращої читабельності */
     text-decoration: none;
 }
 
@@ -138,7 +138,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .about a {
-    color: #57b1bc;
+    color: white; /* Змінено на білий для кращої читабельності */
     text-decoration: none;
     font-weight: 700;
 }
@@ -196,7 +196,7 @@ nav ul li a:hover, nav ul li a.active {
 
 .teaser-link {
     display: inline-block;
-    color: #f04625;
+    color: white; /* Змінено на білий для кращої читабельності */
     text-decoration: none;
     font-weight: 700;
     margin-top: 1rem;
@@ -227,7 +227,7 @@ nav ul li a:hover, nav ul li a.active {
 
 .speaker-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Фіксована мінімальна ширина */
     gap: 1.5rem;
 }
 
@@ -239,6 +239,8 @@ nav ul li a:hover, nav ul li a.active {
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    flex-direction: column; /* Змінено на колонку для кращого вирівнювання */
+    text-align: center;
 }
 
 .speaker-card:hover {
@@ -250,7 +252,7 @@ nav ul li a:hover, nav ul li a.active {
     height: 180px;
     object-fit: cover;
     border-radius: 10px;
-    margin-right: 1.5rem;
+    margin-bottom: 1rem; /* Відступ під зображенням */
 }
 
 .speaker-info h3 {
@@ -258,11 +260,10 @@ nav ul li a:hover, nav ul li a.active {
     font-size: 1.6rem;
     font-weight: 900;
     margin-bottom: 0.5rem;
-    background-color: #57b1bc; /* Бірюзовий фон на всю комірку */
+    background-color: #57b1bc; /* Бірюзовий фон на всю ширину картки */
     padding: 0.5rem;
     border-radius: 5px;
-    width: 100%; /* На всю ширину .speaker-info */
-    text-align: center; /* Вирівнювання по центру */
+    width: 100%; /* Ширина на всю картку */
     box-sizing: border-box; /* Щоб padding не вилазив */
 }
 
@@ -307,15 +308,33 @@ nav ul li a:hover, nav ul li a.active {
     gap: 1.5rem;
 }
 
-.partner-grid img {
+.partner-card {
+    position: relative;
+    text-align: center;
+}
+
+.partner-card img {
     width: 100%;
     height: 100px;
     object-fit: contain;
     transition: transform 0.3s;
 }
 
-.partner-grid img:hover {
+.partner-card img:hover {
     transform: scale(1.05);
+}
+
+.partner-name {
+    display: block;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: #57b1bc;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 100%; /* Ширина на всю картку */
+    box-sizing: border-box;
+    margin-top: 0.5rem;
 }
 
 /* Таймлайн */
@@ -376,7 +395,7 @@ nav ul li a:hover, nav ul li a.active {
 
 /* Футер */
 footer {
-    background: linear-gradient(135deg, #57b1bc, #f04625);
+    background: #f04625; /* Чистий помаранчевий фон */
     color: white;
     text-align: center;
     padding: 1rem;
@@ -433,5 +452,13 @@ footer a:hover {
 
     .teaser-grid {
         grid-template-columns: 1fr;
+    }
+
+    .speaker-grid {
+        grid-template-columns: 1fr; /* Одна колонка на малих екранах */
+    }
+
+    .partner-card {
+        width: 100%;
     }
 }
