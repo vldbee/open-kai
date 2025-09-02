@@ -28,7 +28,7 @@ header {
 }
 
 nav {
-    max-width: 1200px;
+    max-width: 1100px; /* Змінено відповідно до нової ширини */
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -135,7 +135,7 @@ nav ul li a:focus {
 
 /* Секція про подію */
 .about {
-    max-width: 1200px;
+    max-width: 1100px; /* Змінено відповідно до нової ширини */
     margin: 1.5rem auto;
     padding: 1.5rem;
     background-color: #ffffff;
@@ -163,7 +163,7 @@ nav ul li a:focus {
 
 /* Секція тизер */
 .teaser {
-    max-width: 1200px;
+    max-width: 1100px; /* Змінено відповідно до нової ширини */
     margin: 2rem auto;
     padding: 1.5rem;
     text-align: center;
@@ -228,7 +228,7 @@ nav ul li a:focus {
 
 /* Спікери */
 .speakers {
-    max-width: 1200px;
+    max-width: 1100px; /* Обмежено розміром зображення (1000px) + прямокутник часу (100px) */
     margin: 2rem auto;
     padding: 1.5rem;
     text-align: center;
@@ -245,68 +245,62 @@ nav ul li a:focus {
 }
 
 .speaker-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
 }
 
-.speaker-card {
+.speaker-container {
     display: flex;
     align-items: center;
-    background-color: #ffffff;
-    padding: 1.5rem;
-    border: 2px solid #f04625;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    flex-direction: column;
-    text-align: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1100px; /* 1000px (зображення) + 100px (прямокутник часу) */
+    justify-content: center;
 }
 
-.speaker-card:hover {
+.speaker-image {
+    display: block;
+    transition: transform 0.3s;
+    width: 100%;
+    max-width: 1000px;
+    border: 2px solid #ffffff; /* Біла обводка */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.speaker-image:hover {
     transform: translateY(-5px);
 }
 
-.speaker-card img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
-.speaker-info h3 {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin-bottom: 0.5rem;
-    background-color: #3a8a94;
-    padding: 0.5rem;
-    border-radius: 5px;
+.speaker-image img {
     width: 100%;
-    box-sizing: border-box;
+    max-width: 1000px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
 }
 
-.speaker-info .topic {
-    color: #57b1bc;
-    font-size: 1.1rem;
+.speaker-time {
+    background-color: #3a8a94;
+    color: white;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 0.8rem;
-}
-
-.speaker-info .quote {
-    font-style: italic;
-    font-size: 0.95rem;
-    color: #333;
-    background-color: #ffffff;
     padding: 1rem;
-    border-left: 3px solid #f04625;
-    border-radius: 5px;
+    border-radius: 10px;
+    width: 100px;
+    height: 200px; /* Відповідно до висоти зображення */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-shrink: 0;
 }
 
 /* Партнери */
 .partners {
-    max-width: 1200px;
+    max-width: 1100px; /* Змінено відповідно до нової ширини */
     margin: 2rem auto;
     padding: 1.5rem;
     text-align: center;
@@ -323,24 +317,49 @@ nav ul li a:focus {
 }
 
 .partner-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.partner-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.partner-row:nth-child(1) {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    max-width: 100%;
+}
+
+.partner-row:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    max-width: 66.67%;
+    margin: 0 auto;
 }
 
 .partner-card {
     position: relative;
     text-align: center;
     background-color: #ffffff;
-    padding: 1rem;
+    padding: 1.5rem;
     border: 2px solid #f04625;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .partner-card img {
     width: 100%;
-    height: 100px;
+    height: 150px;
     object-fit: contain;
     transition: transform 0.3s;
 }
@@ -352,7 +371,7 @@ nav ul li a:focus {
 .partner-name {
     display: block;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 700;
     background-color: #3a8a94;
     padding: 0.5rem;
@@ -360,11 +379,26 @@ nav ul li a:focus {
     width: 100%;
     box-sizing: border-box;
     margin-top: 0.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.partner-contact {
+    display: block;
+    color: #80c7d0;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: color 0.3s;
+}
+
+.partner-contact:hover {
+    color: #f04625;
 }
 
 /* Таймлайн */
 .timeline {
-    max-width: 1200px;
+    max-width: 1100px; /* Змінено відповідно до нової ширини */
     margin: 2rem auto;
     padding: 1.5rem;
     text-align: center;
@@ -488,22 +522,47 @@ footer a:hover {
         display: flex;
     }
 
-    .speaker-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .speaker-card img {
-        margin-right: 0;
-        margin-bottom: 1rem;
-    }
-
     .teaser-grid, .speaker-grid, .partner-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 
     .about, .teaser, .speakers, .partners, .timeline {
         padding: 1rem;
         margin: 1rem;
     }
-} 
+
+    .speakers {
+        max-width: 1000px; /* Обмежено розміром зображення на мобільних */
+    }
+
+    .speaker-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .speaker-time {
+        width: 100%;
+        max-width: 1000px;
+        height: 60px;
+    }
+
+    .partner-grid {
+        gap: 1rem;
+    }
+
+    .partner-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .partner-row:nth-child(1),
+    .partner-row:nth-child(2) {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .partner-card {
+        max-width: 100%;
+    }
+}
