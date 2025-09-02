@@ -278,7 +278,7 @@ nav ul li a:focus {
     width: 100%;
     max-width: 1000px;
     height: 200px;
-    object-fit: contain; /* Змінено на contain для повного відображення */
+    object-fit: contain; /* Повне відображення */
     display: block;
 }
 
@@ -532,7 +532,7 @@ footer a:hover {
     }
 
     .speakers {
-        max-width: 100%; /* Змінено для повної ширини екрана */
+        max-width: 100%; /* Повна ширина екрана */
     }
 
     .speaker-container {
@@ -542,20 +542,21 @@ footer a:hover {
     }
 
     .speaker-image {
-        max-width: 90vw; /* 90% ширини екрана для уникнення скролу */
+        max-width: 80vw; /* 80% ширини екрана для вужчого вигляду */
         width: 100%;
     }
 
     .speaker-image img {
         max-width: 100%; /* Повна ширина контейнера */
-        height: auto; /* Зберігає пропорції зображення */
+        height: auto; /* Зберігає пропорції */
         object-fit: contain; /* Повне відображення зображення */
     }
 
     .speaker-time {
         width: 100%;
-        max-width: 90vw; /* Відповідно до ширини зображення */
+        max-width: 80vw; /* Відповідно до ширини зображення */
         height: 60px;
+        font-size: 1rem; /* Зменшено шрифт для компактності */
     }
 
     .partner-grid {
