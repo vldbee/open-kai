@@ -228,7 +228,7 @@ nav ul li a:focus {
 
 /* Спікери */
 .speakers {
-    max-width: 1100px; /* Обмежено розміром зображення (1000px) + прямокутник часу (100px) */
+    max-width: 1100px; /* 1000px (зображення) + 100px (прямокутник часу) */
     margin: 2rem auto;
     padding: 1.5rem;
     text-align: center;
@@ -278,7 +278,7 @@ nav ul li a:focus {
     width: 100%;
     max-width: 1000px;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain; /* Змінено на contain для повного відображення */
     display: block;
 }
 
@@ -532,17 +532,29 @@ footer a:hover {
     }
 
     .speakers {
-        max-width: 1000px; /* Обмежено розміром зображення на мобільних */
+        max-width: 100%; /* Змінено для повної ширини екрана */
     }
 
     .speaker-container {
         flex-direction: column;
         align-items: center;
+        max-width: 100%;
+    }
+
+    .speaker-image {
+        max-width: 90vw; /* 90% ширини екрана для уникнення скролу */
+        width: 100%;
+    }
+
+    .speaker-image img {
+        max-width: 100%; /* Повна ширина контейнера */
+        height: auto; /* Зберігає пропорції зображення */
+        object-fit: contain; /* Повне відображення зображення */
     }
 
     .speaker-time {
         width: 100%;
-        max-width: 1000px;
+        max-width: 90vw; /* Відповідно до ширини зображення */
         height: 60px;
     }
 
